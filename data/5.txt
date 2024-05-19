@@ -1,0 +1,9 @@
+PLACE NORTH,2,2
+PLACE 2,2,NORTHEAST
+PLACE 21 , hsjk ,, ,, dsghjd NORTH,... xyz
+LEFT 2,1,NORTH
+REPORT 1,2,SOUTH
+place 1,1,north
+left
+move
+REPORT
