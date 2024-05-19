@@ -1,6 +1,14 @@
 class MoveToyRobot:
 
     def __init__(self,x,y,face):
+        """
+        Initializes a toy robot with its position and facing direction.
+
+        Parameters:
+        x (int): The x-coordinate of the robot's position.
+        y (int): The y-coordinate of the robot's position.
+        face (str): The direction the robot is facing (NORTH, SOUTH, EAST, or WEST).
+        """
         self.x = x
         self.y = y
         self.face = face
@@ -15,6 +23,12 @@ class MoveToyRobot:
         }
 
     def move_robot(self):
+        """
+        Moves the robot one unit in the direction it is facing.
+
+        Returns:
+        tuple: A tuple containing the new x and y coordinates as strings.
+        """
         # Calculate the potential new position
         direction_delta = self.direction_deltas[self.face]
         new_x = int(self.x) + direction_delta['dx']
@@ -28,4 +42,4 @@ class MoveToyRobot:
             return str(new_x), str(new_y)
         else:
             # Otherwise, return the current position
-            return self.x, self.y
+            return str(self.x), str(self.y)
