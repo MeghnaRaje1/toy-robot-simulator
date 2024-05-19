@@ -12,7 +12,7 @@ class MoveToyRobot:
         self.x = x
         self.y = y
         self.face = face
-        print("Init function move", self.x, self.y, self.face)
+        
 
         # Define a dictionary of direction deltas
         self.direction_deltas = {

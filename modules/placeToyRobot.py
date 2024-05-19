@@ -12,7 +12,7 @@ class PlaceToyRobot:
         self.x=x
         self.y=y
         self.face=face
-        print("Init function place",self.x,self.y,self.face)
+        
 
     def check_valid_place(self):
         """

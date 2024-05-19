@@ -8,7 +8,7 @@ class DirectionToyRobot:
         face (str): The direction the robot is facing (NORTH, SOUTH, EAST, or WEST).
         """
         self.face = face
-        print("Init function direction", self.face)
+        
 
         # Define a dictionary of direction deltas
         self.direction= {
@@ -30,7 +30,7 @@ class DirectionToyRobot:
         """
         # Calculate the potential new position
         direction_delta = self.direction[self.face]
-        print(direction_delta)
+        
         direction_delta = direction_delta - 1
         direction_delta = direction_delta % 4
 
