@@ -10,7 +10,7 @@ class DirectionToyRobot:
         self.face = face
         
 
-        # Define a dictionary of direction deltas
+        # Dictionary of direction
         self.direction= {
             'NORTH': 0,
             'SOUTH': 2,
@@ -18,7 +18,7 @@ class DirectionToyRobot:
             'WEST': 3
         }
 
-        # Creating an inverted dictionary where values become keys and keys become values
+        # Creating an inverted dictionary
         self.inverse_directions = {value: key for key, value in self.direction.items()}
 
     def move_left(self):
@@ -28,7 +28,7 @@ class DirectionToyRobot:
         Returns:
         str: The new direction the robot is facing after the rotation.
         """
-        # Calculate the potential new position
+        # Calculate the new position
         direction_delta = self.direction[self.face]
         
         direction_delta = direction_delta - 1
@@ -43,9 +43,8 @@ class DirectionToyRobot:
         Returns:
         str: The new direction the robot is facing after the rotation.
         """
-        # Calculate the potential new position
+        # Calculate the new position
         direction_delta = self.direction[self.face]
-        print("----",direction_delta)
         direction_delta = direction_delta + 1
         direction_delta = direction_delta % 4
 
