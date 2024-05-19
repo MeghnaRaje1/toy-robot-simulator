@@ -98,16 +98,6 @@ class TestMainFunctions(unittest.TestCase):
         report_robot(0, 0, 'NORTH')
         mock_report.assert_called_once()
 
-    @patch('builtins.print')
-    def test_execute_instructions(self, mock_print):
-        instructions = ["PLACE 0,0,NORTH", "MOVE", "LEFT", "RIGHT", "REPORT"]
-        with patch('modules.placeToyRobot.PlaceToyRobot.check_valid_place', return_value=True):
-            with patch('modules.moveToyRobot.MoveToyRobot.move_robot', return_value=('0', '1')):
-                with patch('modules.directionToyRobot.DirectionToyRobot.move_left', return_value='WEST'):
-                    with patch('modules.directionToyRobot.DirectionToyRobot.move_right', return_value='NORTH'):
-                        with patch('modules.reportToyRobot.ReportToyRobot.report'):
-                            execute_instructions(instructions)
-                            self.assertTrue(mock_print.called)
 
 
 

@@ -14,7 +14,7 @@ class ReportToyRobot:
         self.x = x
         self.y = y
         self.face = face
-        print("Init function report", self.x, self.y, self.face)
+        
 
 
 
