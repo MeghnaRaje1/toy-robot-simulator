@@ -2,6 +2,7 @@ from modules.placeToyRobot import PlaceToyRobot
 from modules.moveToyRobot import MoveToyRobot
 from modules.directionToyRobot import DirectionToyRobot
 from modules.reportToyRobot import ReportToyRobot
+import os
 
 
 def read_input_from_file(file_path):
@@ -100,26 +101,29 @@ def execute_instructions(instructions):
     """
     place_flag = False
     x_final, y_final, direction_final = None, None, None
+
+    if os.path.exists('data/result.txt'):
+    # Opening the file in write mode to clear its content
+        with open('data/result.txt', 'w'):
+            pass
     
     for instruction in instructions:
         if instruction.upper().startswith('PLACE'):
-            # Split the instruction based on whitespace
+            # Spliting the instruction based on whitespace
             parts = instruction.split()
-            # Check if there are exactly two commas in the instruction
+            # Checking if there are exactly two commas in the instruction
             if len(parts) == 2 and ',' in parts[1]:
-                # Split the second part based on commas
+                # Spliting the second part based on commas
                 params = parts[1].split(',')
                 
-                # Ensure there are exactly three parameters after splitting
+                # Ensuring there are exactly three parameters after splitting
                 if len(params) == 3:
-                    # Assign the parameters to variables
                     x_temp, y_temp, direction_temp = params
                     if not (x_temp.isdigit()  and y_temp.isdigit() and isinstance(direction_temp, str)):
                             continue
                     
                     # Check if direction is a valid string
                     if direction_temp.upper() in ['NORTH', 'SOUTH', 'EAST', 'WEST']:
-                        # Call place_robot function
                         x_final, y_final, direction_final = place_robot(x_temp, y_temp, direction_temp)
                         
                         # Check if placement was successful
@@ -147,7 +151,7 @@ def main():
     """
     The main function that reads instructions from a file and executes them.
     """
-    instructions = read_input_from_file('data/5.txt')
+    instructions = read_input_from_file('data/7.txt')
     execute_instructions(instructions)
 
 

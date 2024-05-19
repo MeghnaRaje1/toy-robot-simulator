@@ -14,7 +14,7 @@ class MoveToyRobot:
         self.face = face
         
 
-        # Define a dictionary of direction deltas
+        # A dictionary of direction deltas
         self.direction_deltas = {
             'NORTH': {'dx': 0, 'dy': 1},
             'SOUTH': {'dx': 0, 'dy': -1},
@@ -29,7 +29,7 @@ class MoveToyRobot:
         Returns:
         tuple: A tuple containing the new x and y coordinates as strings.
         """
-        # Calculate the potential new position
+        # Calculate the  new position
         direction_delta = self.direction_deltas[self.face]
         new_x = int(self.x) + direction_delta['dx']
         new_y = int(self.y) + direction_delta['dy']

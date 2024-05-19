@@ -27,10 +27,10 @@ class ReportToyRobot:
         """
         try:
             # Delete the previous file if it exists
-            if os.path.exists('data/result.txt'):
-                os.remove('data/result.txt')
+            # if os.path.exists('data/result.txt'):
+            #     os.remove('data/result.txt')
 
-            # Write the current position of the robot to the file
+            # The current position of the robot is written to the file
             with open('data/result.txt', 'a') as file:
                 file.write(f"{self.x},{self.y},{self.face}\n")
             return True
