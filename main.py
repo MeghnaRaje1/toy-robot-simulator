@@ -151,7 +151,7 @@ def main():
     """
     The main function that reads instructions from a file and executes them.
     """
-    instructions = read_input_from_file('data/8.txt')
+    instructions = read_input_from_file('data/7.txt')
     execute_instructions(instructions)
 
 
